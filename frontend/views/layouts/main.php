@@ -18,6 +18,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,8 +105,12 @@ AppAsset::register($this);
                     <h4 class="font-bold text-gray-900 mb-4">Sản phẩm</h4>
                     <ul class="space-y-2 text-sm text-gray-600">
                         <li><a href="#" class="hover:text-brand-blue">Data Doanh nghiệp</a></li>
-                        <li><a href="#" class="hover:text-brand-blue">Zalo ZNS</a></li>
-                        <li><a href="#" class="hover:text-brand-blue">SMS Brandname</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Zalo - Marketing</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">SMS - Marketing</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Email - Marketing</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Website - Marketing</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Phone call - Marketing</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">App - Marketing</a></li>
                     </ul>
                 </div>
                 <div>
@@ -118,15 +123,14 @@ AppAsset::register($this);
                 </div>
                 <div>
                     <h4 class="font-bold text-gray-900 mb-4">Liên hệ</h4>
-                    <p class="text-sm text-gray-600 mb-2">Hotline: 1900 xxxx</p>
+                    <p class="text-sm text-gray-600 mb-2">Hotline: 0934880855</p>
                     <p class="text-sm text-gray-600">Email: support@chaosep.com</p>
                     <p class="text-sm text-gray-600">Hồ Chí Minh, Việt Nam</p>
                 </div>
             </div>
             <div class="border-t border-gray-100 pt-8 text-center text-sm text-gray-500">
-                &copy; 2025 Chào Sếp. All rights reserved.This website make by <a
-                                            href="https://stonenetworktech.com/" target="_blank"
-                                            rel="nofollow noopener" class="font-display font-extrabold text-2x2 tracking-tight text-brand-dark">StoneNewwork</a>
+                &copy; 2025 Chào Sếp. All rights reserved.This website make by 
+                <a href="https://stonenetworktech.com/" target="_blank" rel="nofollow noopener" class="font-display font-extrabold text-2x2 tracking-tight text-brand-dark">StoneNewwork</a>
             </div>
         </div>
     </footer>

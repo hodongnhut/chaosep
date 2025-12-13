@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào Sếp - Nền tảng Tiếp cận & Chốt Deal B2B Tự động</title>
+    <meta name="description" content="Gửi Zalo ZNS, SMS Brandname, Auto Call đến 1 triệu chủ doanh nghiệp Việt Nam.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0066FF',
+                            indigo: '#4F46E5',
+                            dark: '#0F172A',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #0066FF 0%, #4F46E5 100%)',
+                        'dark-gradient': 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Polish */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0066FF 0%, #4F46E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .phone-mockup {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 8px solid #1F2937;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            background-color: #fff;
+            position: relative;
+        }
+
+        /* Mobile notch simulation */
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 24px;
+            background: #1F2937;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800 antialiased bg-white overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass-panel transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <div class="w-10 h-10 bg-hero-gradient rounded-lg flex items-center justify-center text-white mr-2">
+                        <i class="fas fa-chart-pie text-xl"></i>
+                    </div>
+                    <span class="font-display font-extrabold text-2xl tracking-tight text-brand-dark">
+                        Chào<span class="text-brand-blue">Sếp</span>.
+                    </span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#mobile-app"
+                        class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">Ứng dụng</a>
+                    <a href="#bang-gia"
+                        class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">Bảng giá</a>
+                    <a href="#dang-ky"
+                        class="text-sm font-bold text-white bg-hero-gradient px-6 py-3 rounded-full hover:shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-0.5">
+                        Đăng ký miễn phí
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-slate-50">
+        <div
+            class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply filter">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-indigo-100 rounded-full blur-3xl opacity-50 mix-blend-multiply filter">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-sm font-bold uppercase tracking-wide mb-8 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-brand-blue animate-pulse"></span>
+                    SaaS B2B Platform #1 Việt Nam
+                </div>
+
+                <h1
+                    class="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] mb-8">
+                    Chào đúng Sếp.<br>
+                    <span class="text-gradient">Chốt đúng Deal.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                    Hệ thống tự động hóa giúp bạn tiếp cận <strong>1.000.000+</strong> chủ doanh nghiệp qua Zalo, SMS &
+                    Auto-Call.
+                    <span class="font-semibold text-brand-dark">Không spam, chỉ tập trung vào tỷ lệ chuyển đổi.</span>
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <div
+                        class="flex items-center gap-2 px-5 py-3 bg-white rounded-xl shadow-md border border-slate-100 hover:border-blue-300 transition cursor-default">
+                        <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600"><i
+                                class="fas fa-bolt"></i></div>
+                        <div class="text-left">
+                            <p class="text-xs text-slate-500 font-medium">Zalo ZNS</p>
+                            <p class="font-bold text-slate-900">450đ<span
+                                    class="text-xs font-normal text-slate-400">/tin</span></p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 px-5 py-3 bg-white rounded-xl shadow-md border border-slate-100 hover:border-indigo-300 transition cursor-default">
+                        <div class="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
+                            <i class="fas fa-comment-dots"></i></div>
+                        <div class="text-left">
+                            <p class="text-xs text-slate-500 font-medium">SMS Brand</p>
+                            <p class="font-bold text-slate-900">700đ<span
+                                    class="text-xs font-normal text-slate-400">/tin</span></p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 px-5 py-3 bg-white rounded-xl shadow-md border border-slate-100 hover:border-green-300 transition cursor-default">
+                        <div class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center text-green-600"><i
+                                class="fas fa-phone"></i></div>
+                        <div class="text-left">
+                            <p class="text-xs text-slate-500 font-medium">Auto Call</p>
+                            <p class="font-bold text-slate-900">1.200đ<span
+                                    class="text-xs font-normal text-slate-400">/phút</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#dang-ky"
+                        class="w-full sm:w-auto px-10 py-5 text-lg font-bold text-white bg-hero-gradient rounded-full shadow-xl shadow-blue-500/30 hover:-translate-y-1 hover:shadow-blue-600/40 transition duration-300 flex items-center justify-center gap-2">
+                        Dùng thử miễn phí 7 ngày
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="flex items-center gap-2 text-slate-500 text-sm font-medium px-6">
+                        <i class="fas fa-shield-alt text-green-500"></i> Bảo mật 100%
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 relative mx-auto max-w-5xl">
+                <div class="rounded-2xl bg-slate-900 p-2 shadow-2xl animate-fade-in-up border border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                        alt="Dashboard Analytics"
+                        class="rounded-xl w-full h-auto object-cover opacity-90 hover:opacity-100 transition duration-700">
+                </div>
+                <div class="absolute -top-6 -right-6 md:-right-12 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 animate-bounce hidden md:flex"
+                    style="animation-duration: 3s;">
+                    <div
+                        class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-semibold">Vừa chốt thành công</p>
+                        <p class="text-sm font-bold text-slate-900">Gói Business - 39tr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 border-y border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Tin dùng bởi 5,000+ tập đoàn hàng
+                đầu</p>
+            <div
+                class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <span class="text-xl font-bold text-slate-600 flex items-center gap-2"><i class="fas fa-building"></i>
+                    VINHOMES</span>
+                <span class="text-xl font-bold text-slate-600 flex items-center gap-2"><i class="fas fa-umbrella"></i>
+                    PRUDENTIAL</span>
+                <span class="text-xl font-bold text-slate-600 flex items-center gap-2"><i class="fas fa-university"></i>
+                    VPBANK</span>
+                <span class="text-xl font-bold text-slate-600 flex items-center gap-2"><i
+                        class="fas fa-file-invoice-dollar"></i> MISA</span>
+                <span class="text-xl font-bold text-slate-600 flex items-center gap-2"><i
+                        class="fas fa-laptop-code"></i> FPT</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">Công nghệ lõi – Tối ưu
+                    chuyển đổi</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-3xl mb-6">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Zalo ZNS Official</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Gửi tin nhắn chăm sóc khách hàng với thương hiệu
+                        đã đăng ký. Tỷ lệ mở 95%. Chi phí rẻ hơn SMS 40%.</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 text-3xl mb-6">
+                        <i class="fas fa-sms"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">SMS Brandname</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Tên công ty hiển thị ở phần người gửi. Khẳng định
+                        uy tín, tránh bị đánh dấu là spam. Phủ sóng mọi nhà mạng.</p>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-3xl mb-6">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">AI Auto Call</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Tự động gọi 10,000 cuộc/giờ. Lọc khách quan tâm
+                        chuyển về sale, loại bỏ thuê bao ảo. Giọng đọc AI tự nhiên.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mobile-app" class="py-24 bg-brand-dark overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-blue rounded-full opacity-20 blur-[100px]">
+        </div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-indigo rounded-full opacity-20 blur-[100px]">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+
+                <div class="lg:w-1/2 text-white">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-300 text-xs font-bold uppercase tracking-wide mb-6">
+                        <i class="fas fa-mobile-alt"></i> Mobile App Đầu tiên tại VN
+                    </div>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 leading-tight">
+                        Quản lý chiến dịch<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">mọi
+                            lúc, mọi nơi.</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Bạn đang đi đánh Golf hay gặp đối tác? Chỉ cần mở điện thoại, mọi chỉ số kinh doanh và chiến
+                        dịch đều nằm trong tầm kiểm soát.
+                    </p>
+
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 mt-1">
+                                <i class="fas fa-rocket"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Bấm 1 phát - Gửi 10.000 tin</h4>
+                                <p class="text-slate-400 text-sm">Kích hoạt chiến dịch ngay trên app mà không cần mở
+                                    laptop.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 mt-1">
+                                <i class="fas fa-bell"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Thông báo Realtime</h4>
+                                <p class="text-slate-400 text-sm">Điện thoại "ting ting" ngay khi Boss khách hàng trả
+                                    lời tin nhắn.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 mt-1">
+                                <i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Báo cáo trực quan</h4>
+                                <p class="text-slate-400 text-sm">Biểu đồ tăng trưởng, chi phí hiển thị rõ ràng từng
+                                    phút.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-semibold text-blue-300"><i class="fas fa-tools mr-2"></i>Đang phát
+                                triển - Ra mắt Q1/2026</span>
+                        </div>
+                        <a href="#dang-ky"
+                            class="block text-center w-full py-3 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-100 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                            Đăng ký nhận App miễn phí trọn đời
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative h-[600px] w-full flex justify-center items-center">
+                    <div class="absolute z-20 w-[280px] h-[580px] phone-mockup bg-white animate-float">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover" alt="App Interface">
+                        <div
+                            class="absolute bottom-10 left-4 right-4 bg-white/90 backdrop-blur p-3 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">
+                                    <i class="fas fa-check"></i></div>
+                                <div>
+                                    <p class="text-xs font-bold text-gray-800">Đã gửi thành công</p>
+                                    <p class="text-[10px] text-gray-500">Chiến dịch: BĐS Novaland</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute z-10 w-[260px] h-[540px] phone-mockup bg-gray-100 translate-x-20 translate-y-10 opacity-80 border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover grayscale" alt="App Analytics">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="bang-gia" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-display font-bold text-3xl text-slate-900 mb-4">Đầu tư thông minh</h2>
+                <p class="text-slate-600">Chọn gói phù hợp với quy mô doanh nghiệp của bạn.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-blue-300 transition">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Gói Pro</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-extrabold text-slate-900">15.000.000</span>
+                        <span class="text-slate-500 ml-2">VNĐ</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> 50.000 Data Boss
+                            (BĐS/Bảo hiểm)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> Tặng 1.000 tin ZNS
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> Hỗ trợ giờ hành
+                            chính</li>
+                    </ul>
+                    <a href="#dang-ky"
+                        class="block w-full py-3 px-6 text-center border-2 border-slate-200 rounded-xl font-bold text-slate-700 hover:border-slate-900 hover:text-slate-900 transition">Đăng
+                        ký Gói Pro</a>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-3xl shadow-2xl relative transform md:-translate-y-4">
+                    <div
+                        class="absolute top-0 right-0 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl">
+                        PHỔ BIẾN NHẤT</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Gói Business</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-extrabold text-white">39.000.000</span>
+                        <span class="text-slate-400 ml-2">VNĐ</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <strong>200.000 Data Boss</strong> (Full Info)</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <strong>Miễn phí App Mobile trọn đời</strong></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i> Tích hợp
+                            Auto-Call AI</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i> Support
+                            1:1 Ưu tiên 24/7</li>
+                    </ul>
+                    <a href="#dang-ky"
+                        class="block w-full py-4 px-6 text-center bg-hero-gradient rounded-xl font-bold text-white hover:shadow-lg hover:opacity-90 transition">
+                        Đăng ký Gói Business ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="dang-ky" class="bg-slate-50 pt-20 pb-10 border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16 border border-slate-100">
+                <div class="text-center mb-10">
+                    <h2 class="font-display font-bold text-3xl text-slate-900 mb-2">Nhận tư vấn & Demo App</h2>
+                    <p class="text-slate-500">Để lại thông tin, chuyên viên sẽ liên hệ gửi tài khoản Demo trong 5 phút.
+                    </p>
+                </div>
+
+                <form class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Họ tên của bạn</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-blue outline-none transition"
+                            placeholder="VD: Nguyễn Văn A">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Số điện thoại (Zalo)</label>
+                            <input type="tel"
+                                class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-blue outline-none transition"
+                                placeholder="0909 xxx xxx">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Tên công ty</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-blue outline-none transition"
+                                placeholder="VD: Bất động sản XYZ">
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-4 bg-brand-dark text-white font-bold rounded-xl shadow-lg hover:bg-slate-800 transition transform hover:-translate-y-1">
+                        Gửi thông tin & Nhận Demo App ngay
+                    </button>
+                    <p class="text-center text-xs text-slate-400 mt-4"><i class="fas fa-lock mr-1"></i> Thông tin được
+                        bảo mật tuyệt đối.</p>
+                </form>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm border-t border-slate-200 pt-8">
+                <div class="mb-4 md:mb-0 font-bold text-slate-700">© 2025 ChaoSep.com</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-brand-blue">Điều khoản</a>
+                    <a href="#" class="hover:text-brand-blue">Chính sách bảo mật</a>
+                    <a href="#" class="hover:text-brand-blue">Liên hệ hỗ trợ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

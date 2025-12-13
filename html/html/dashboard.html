@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào Sếp Dashboard - Cổng Quản lý Chiến dịch Marketing Automation</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fonts: Inter (Cho sự chuyên nghiệp và dễ đọc) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Config Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Màu sắc chủ đạo theo yêu cầu
+                        'sidebar-dark': '#0F172A', // Xám đậm
+                        'brand-blue': '#0066FF',   // Xanh dương đậm
+                        'brand-indigo': '#4F46E5', // Màu nhấn
+                        'brand-success': '#10B981',// Màu thành công (Green)
+                        'brand-warning': '#F59E0B',// Màu cảnh báo (Orange)
+                    },
+                    boxShadow: {
+                        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+                        'custom': '0 10px 30px -5px rgba(15, 23, 42, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS tuỳ chỉnh cho Sidebar */
+        .sidebar-menu-item {
+            @apply flex items-center p-3 rounded-xl transition duration-200 text-slate-300 hover:bg-slate-800 hover:text-white;
+        }
+
+        .sidebar-menu-item.active {
+            @apply bg-brand-blue/20 text-brand-blue font-semibold border-l-4 border-brand-blue;
+        }
+
+        .sidebar-menu-item.active .text-slate-300 {
+            @apply text-white;
+        }
+
+        /* Tiến trình tuỳ chỉnh */
+        .progress-bar {
+            height: 8px;
+            border-radius: 9999px;
+            background-color: #E2E8F0;
+            /* Slate 200 */
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 9999px;
+            transition: width 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-slate-100 min-h-screen flex">
+
+    <!-- 1. SIDEBAR CỐ ĐỊNH (Dark Theme) -->
+    <div
+        class="fixed top-0 left-0 h-full w-64 bg-sidebar-dark text-white p-6 flex flex-col z-50 shadow-custom hidden lg:flex">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-2 mb-10 mt-2">
+            <div
+                class="w-9 h-9 bg-brand-blue rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-500/50">
+                <i class="fas fa-paper-plane text-sm"></i>
+            </div>
+            <span class="font-bold text-2xl tracking-tight">
+                Chào<span class="text-brand-blue">Sếp</span>.
+            </span>
+        </div>
+
+        <!-- Menu Navigation -->
+        <nav class="flex-grow space-y-2">
+            <a href="#" class="sidebar-menu-item active">
+                <i class="fas fa-chart-line w-6"></i>
+                <span class="ml-3">Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <i class="fas fa-rocket w-6"></i>
+                <span class="ml-3">Chiến dịch</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <i class="fas fa-users w-6"></i>
+                <span class="ml-3">Danh sách Lead</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <i class="fas fa-palette w-6"></i>
+                <span class="ml-3">Template</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <i class="fas fa-file-alt w-6"></i>
+                <span class="ml-3">Báo cáo</span>
+            </a>
+        </nav>
+
+        <!-- Footer Menu -->
+        <div class="mt-auto pt-6 space-y-2 border-t border-slate-700">
+            <a href="#" class="sidebar-menu-item">
+                <i class="fas fa-wallet w-6"></i>
+                <span class="ml-3">Nạp tiền & Gói</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <i class="fas fa-cog w-6"></i>
+                <span class="ml-3">Cài đặt</span>
+            </a>
+            <a href="#" class="sidebar-menu-item text-red-400 hover:text-red-300">
+                <i class="fas fa-sign-out-alt w-6"></i>
+                <span class="ml-3">Đăng xuất</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 lg:ml-64 p-6 md:p-10">
+
+        <!-- 2. HEADER CHÀO MỪNG -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="font-bold text-3xl text-slate-900 font-sans">
+                    Xin chào, <span class="text-brand-blue">CEO Việt Anh</span> (Công ty BĐS Diamond)
+                </h1>
+                <p class="text-lg text-slate-500 mt-1">
+                    Chào Sếp! Hôm nay chốt thêm bao nhiêu boss nữa nào? 🎉
+                </p>
+            </div>
+
+            <!-- Nút CTA lớn -->
+            <a href="#"
+                class="mt-4 md:mt-0 px-8 py-3 bg-brand-blue text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition transform hover:-translate-y-0.5">
+                <i class="fas fa-plus mr-2"></i>
+                Tạo chiến dịch mới
+            </a>
+        </header>
+
+        <!-- 3. 4 THẺ SỐ DƯ (BALANCE CARDS) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+            <!-- Thẻ 1: Zalo ZNS -->
+            <div class="bg-white p-6 rounded-xl shadow-custom border-t-4 border-brand-blue">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm font-semibold text-slate-500">Số dư Zalo ZNS</span>
+                    <i class="fab fa-teamspeak text-xl text-brand-blue/70"></i>
+                </div>
+                <p class="font-extrabold text-4xl text-slate-900 mb-2">
+                    87.<span class="text-3xl">420</span>
+                    <span class="text-base font-medium text-slate-400">tin</span>
+                </p>
+                <!-- Progress Bar -->
+                <div class="progress-bar mb-2">
+                    <div class="progress-fill bg-brand-blue" style="width: 87.4%;"></div>
+                </div>
+                <p class="text-xs text-slate-500 font-medium">Sử dụng 12.6% hạn mức tháng</p>
+            </div>
+
+            <!-- Thẻ 2: SMS Brandname -->
+            <div class="bg-white p-6 rounded-xl shadow-custom border-t-4 border-brand-indigo">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm font-semibold text-slate-500">Số dư SMS Brandname</span>
+                    <i class="fas fa-comment-alt text-xl text-brand-indigo/70"></i>
+                </div>
+                <p class="font-extrabold text-4xl text-slate-900 mb-2">
+                    45.<span class="text-3xl">800</span>
+                    <span class="text-base font-medium text-slate-400">tin</span>
+                </p>
+                <!-- Progress Bar -->
+                <div class="progress-bar mb-2">
+                    <div class="progress-fill bg-brand-indigo" style="width: 45.8%;"></div>
+                </div>
+                <p class="text-xs text-slate-500 font-medium">Sử dụng 54.2% hạn mức tháng</p>
+            </div>
+
+            <!-- Thẻ 3: AI Call -->
+            <div class="bg-white p-6 rounded-xl shadow-custom border-t-4 border-brand-success">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm font-semibold text-slate-500">Phút gọi tự động AI</span>
+                    <i class="fas fa-headset text-xl text-brand-success/70"></i>
+                </div>
+                <p class="font-extrabold text-4xl text-slate-900 mb-2">
+                    1.<span class="text-3xl">250</span>
+                    <span class="text-base font-medium text-slate-400">phút</span>
+                </p>
+                <!-- Progress Bar -->
+                <div class="progress-bar mb-2">
+                    <div class="progress-fill bg-brand-success" style="width: 25%;"></div>
+                </div>
+                <p class="text-xs text-slate-500 font-medium">Sử dụng 75.0% hạn mức tháng</p>
+            </div>
+
+            <!-- Thẻ 4: Leads & Tăng trưởng -->
+            <div class="bg-white p-6 rounded-xl shadow-custom border-t-4 border-brand-warning">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm font-semibold text-slate-500">Tổng Leads đã tiếp cận</span>
+                    <i class="fas fa-chart-bar text-xl text-brand-warning/70"></i>
+                </div>
+                <p class="font-extrabold text-4xl text-slate-900 mb-2">
+                    350.<span class="text-3xl">000</span>
+                    <span class="text-base font-medium text-slate-400">Leads</span>
+                </p>
+                <!-- Tăng trưởng -->
+                <div class="flex items-center">
+                    <p class="font-bold text-lg text-brand-success mr-2">
+                        +12.5%
+                    </p>
+                    <span class="text-xs text-slate-500">So với tháng trước</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. BIỂU ĐỒ VÀ BẢNG DỮ LIỆU -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Cột 1: Biểu đồ Tăng trưởng 7 ngày (Simulated SVG Chart) -->
+            <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-custom">
+                <h2 class="font-bold text-xl text-slate-900 mb-4">Hiệu suất 7 ngày gần nhất</h2>
+                <p class="text-sm text-slate-500 mb-6">Tổng Lead tiếp cận: 15.400</p>
+
+                <!-- SVG Chart Simulation -->
+                <svg viewBox="0 0 300 150" class="w-full h-auto" preserveAspectRatio="none">
+                    <!-- Line -->
+                    <polyline fill="none" stroke="#0066FF" stroke-width="3"
+                        points="10,140 50,110 90,80 130,100 170,50 210,70 250,30 290,50" />
+                    <!-- Area Gradient -->
+                    <defs>
+                        <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stop-color="#0066FF" stop-opacity="0.2" />
+                            <stop offset="100%" stop-color="#0066FF" stop-opacity="0.05" />
+                        </linearGradient>
+                    </defs>
+                    <polygon fill="url(#areaGradient)"
+                        points="10,140 50,110 90,80 130,100 170,50 210,70 250,30 290,50 290,140 10,140" />
+                    <!-- Last Point Circle -->
+                    <circle cx="290" cy="50" r="5" fill="#0066FF" stroke="white" stroke-width="2" />
+
+                    <!-- Labels (Simplified) -->
+                    <text x="10" y="148" font-size="10" fill="#64748B">T2</text>
+                    <text x="280" y="148" font-size="10" fill="#64748B">CN</text>
+                    <text x="10" y="30" font-size="10" fill="#64748B">3k</text>
+                    <text x="10" y="140" font-size="10" fill="#64748B">0</text>
+                </svg>
+
+                <div class="mt-4 text-center">
+                    <p class="text-xs text-slate-400">Xem báo cáo chi tiết trong mục Báo cáo.</p>
+                </div>
+            </div>
+
+            <!-- Cột 2 & 3: Bảng Chiến dịch gần đây -->
+            <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-custom">
+                <h2 class="font-bold text-xl text-slate-900 mb-4">Chiến dịch gần đây</h2>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200">
+                        <thead>
+                            <tr
+                                class="text-left text-xs font-semibold uppercase tracking-wider text-slate-500 bg-slate-50">
+                                <th class="px-4 py-3 rounded-tl-lg">Tên chiến dịch</th>
+                                <th class="px-4 py-3">Kênh</th>
+                                <th class="px-4 py-3">Đã gửi</th>
+                                <th class="px-4 py-3">Tỷ lệ đọc</th>
+                                <th class="px-4 py-3 rounded-tr-lg">Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-4 py-4 font-medium text-slate-800">BĐS Cao cấp Q.1</td>
+                                <td class="px-4 py-4"><span class="font-medium text-brand-blue"><i
+                                            class="fab fa-teamspeak mr-1"></i> ZNS</span></td>
+                                <td class="px-4 py-4">12,500/15,000</td>
+                                <td class="px-4 py-4 font-semibold text-brand-success">92%</td>
+                                <td class="px-4 py-4">
+                                    <span
+                                        class="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-brand-success/10 text-brand-success">
+                                        Hoàn thành
+                                    </span>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-4 py-4 font-medium text-slate-800">Thư mời Dự án Bank</td>
+                                <td class="px-4 py-4"><span class="font-medium text-orange-500"><i
+                                            class="fas fa-envelope mr-1"></i> Email</span></td>
+                                <td class="px-4 py-4">56,000/60,000</td>
+                                <td class="px-4 py-4 font-semibold text-brand-success">41%</td>
+                                <td class="px-4 py-4">
+                                    <span
+                                        class="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-blue-500/10 text-blue-500">
+                                        Đang chạy
+                                    </span>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-4 py-4 font-medium text-slate-800">Telesale Khách hàng MISA</td>
+                                <td class="px-4 py-4"><span class="font-medium text-purple-600"><i
+                                            class="fas fa-headset mr-1"></i> AI Call</span></td>
+                                <td class="px-4 py-4">1,200/5,000</td>
+                                <td class="px-4 py-4 font-semibold text-brand-warning">15%</td>
+                                <td class="px-4 py-4">
+                                    <span
+                                        class="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-brand-warning/10 text-brand-warning">
+                                        Tạm dừng
+                                    </span>
+                                </td>
+                            </tr>
+                            <!-- Row 4 -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-4 py-4 font-medium text-slate-800">Thông báo Bảo hiểm VIP</td>
+                                <td class="px-4 py-4"><span class="font-medium text-brand-indigo"><i
+                                            class="fas fa-sms mr-1"></i> SMS</span></td>
+                                <td class="px-4 py-4">4,500/4,500</td>
+                                <td class="px-4 py-4 font-semibold text-brand-success">98%</td>
+                                <td class="px-4 py-4">
+                                    <span
+                                        class="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-brand-success/10 text-brand-success">
+                                        Hoàn thành
+                                    </span>
+                                </td>
+                            </tr>
+                            <!-- Row 5 -->
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="px-4 py-4 font-medium text-slate-800">Triển khai Data mới Q3/2025</td>
+                                <td class="px-4 py-4"><span class="font-medium text-orange-500"><i
+                                            class="fas fa-envelope mr-1"></i> Email</span></td>
+                                <td class="px-4 py-4">0/100,000</td>
+                                <td class="px-4 py-4 font-semibold text-slate-500">0%</td>
+                                <td class="px-4 py-4">
+                                    <span
+                                        class="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-slate-500/10 text-slate-500">
+                                        Dự thảo
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Mobile/Small Screen Fixed Menu (Hidden on large screens) -->
+    <div
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 lg:hidden flex justify-around p-3 z-40 shadow-xl">
+        <a href="#" class="flex flex-col items-center text-brand-blue font-bold text-xs"><i
+                class="fas fa-chart-line text-xl mb-1"></i> Dashboard</a>
+        <a href="#" class="flex flex-col items-center text-slate-500 hover:text-brand-blue text-xs"><i
+                class="fas fa-rocket text-xl mb-1"></i> Chiến dịch</a>
+        <a href="#" class="flex flex-col items-center text-slate-500 hover:text-brand-blue text-xs"><i
+                class="fas fa-wallet text-xl mb-1"></i> Nạp tiền</a>
+        <a href="#" class="flex flex-col items-center text-slate-500 hover:text-brand-blue text-xs"><i
+                class="fas fa-cog text-xl mb-1"></i> Cài đặt</a>
+    </div>
+
+</body>
+
+</html>

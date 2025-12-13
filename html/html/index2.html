@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào Sếp - Nền tảng Tiếp cận Khách hàng Đa kênh All-in-One</title>
+    <meta name="description"
+        content="Gửi Zalo ZNS, SMS Brandname, Email Marketing, Auto Call đến 1 triệu chủ doanh nghiệp Việt Nam.">
+
+    <!-- Fonts: Manrope (Số & Tiêu đề) & Inter (Nội dung) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN v3.3) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Config Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0066FF',
+                            indigo: '#4F46E5',
+                            dark: '#0B1120', // Màu nền sang trọng cho khối App
+                            success: '#10B981',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #0066FF 0%, #4F46E5 100%)',
+                        'glow': 'radial-gradient(circle at center, rgba(79, 70, 229, 0.15) 0%, rgba(255, 255, 255, 0) 70%)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom UI Tweaks */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0066FF 0%, #4F46E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Phone Mockup CSS (Lightweight, no images needed for frame) */
+        .phone-frame {
+            border: 10px solid #1F2937;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 25px;
+            background: #1F2937;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 20;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800 antialiased bg-white overflow-x-hidden">
+
+    <!-- 1. NAVBAR -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 cursor-pointer">
+                    <div
+                        class="w-9 h-9 bg-hero-gradient rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                        <i class="fas fa-paper-plane text-sm"></i>
+                    </div>
+                    <span class="font-display font-extrabold text-2xl tracking-tight text-brand-dark">
+                        Chào<span class="text-brand-blue">Sếp</span>.
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#tinh-nang"
+                        class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">Giải pháp</a>
+                    <a href="#mobile-app"
+                        class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">Ứng dụng</a>
+                    <a href="#bang-gia"
+                        class="text-sm font-semibold text-slate-600 hover:text-brand-blue transition">Bảng giá</a>
+                    <a href="#dang-ky"
+                        class="text-sm font-bold text-white bg-hero-gradient px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-0.5">
+                        Đăng ký miễn phí
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-slate-600"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-slate-50 overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute inset-0 bg-glow pointer-events-none"></div>
+        <div
+            class="absolute top-20 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-pulse-slow">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-50 mix-blend-multiply">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-5xl mx-auto">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-xs font-bold uppercase tracking-wide mb-8">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-blue"></span>
+                    </span>
+                    Nền tảng Tự động hóa B2B #1 Việt Nam
+                </div>
+
+                <h1
+                    class="font-display font-extrabold text-5xl md:text-6xl lg:text-7xl text-slate-900 leading-[1.1] mb-8 animate-fade-in-up">
+                    Chào đúng Sếp.<br>
+                    <span class="text-gradient">Chốt đúng Deal.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    Tiếp cận <strong>1.000.000+</strong> chủ doanh nghiệp qua 4 kênh quyền lực nhất: Zalo, SMS, Email &
+                    Auto-Call. Tối ưu chi phí, tối đa chuyển đổi.
+                </p>
+
+                <!-- PRICING ANCHORS (The Hook) -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up"
+                    style="animation-delay: 0.2s;">
+                    <!-- Zalo -->
+                    <div
+                        class="flex items-center gap-3 px-5 py-3 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-500 transition cursor-default group">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:scale-110 transition">
+                            <i class="fas fa-bolt"></i></div>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase text-slate-400 font-bold">Zalo ZNS</p>
+                            <p class="font-display font-bold text-slate-900">450đ<span
+                                    class="text-xs font-medium text-slate-400">/tin</span></p>
+                        </div>
+                    </div>
+                    <!-- SMS -->
+                    <div
+                        class="flex items-center gap-3 px-5 py-3 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-indigo-500 transition cursor-default group">
+                        <div
+                            class="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover:scale-110 transition">
+                            <i class="fas fa-comment-alt"></i></div>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase text-slate-400 font-bold">SMS Brand</p>
+                            <p class="font-display font-bold text-slate-900">700đ<span
+                                    class="text-xs font-medium text-slate-400">/tin</span></p>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div
+                        class="flex items-center gap-3 px-5 py-3 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-orange-500 transition cursor-default group">
+                        <div
+                            class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 group-hover:scale-110 transition">
+                            <i class="fas fa-envelope"></i></div>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase text-slate-400 font-bold">Email</p>
+                            <p class="font-display font-bold text-slate-900">150đ<span
+                                    class="text-xs font-medium text-slate-400">/mail</span></p>
+                        </div>
+                    </div>
+                    <!-- Call -->
+                    <div
+                        class="flex items-center gap-3 px-5 py-3 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-green-500 transition cursor-default group">
+                        <div
+                            class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center text-green-600 group-hover:scale-110 transition">
+                            <i class="fas fa-phone"></i></div>
+                        <div class="text-left">
+                            <p class="text-[10px] uppercase text-slate-400 font-bold">AI Call</p>
+                            <p class="font-display font-bold text-slate-900">1.200đ<span
+                                    class="text-xs font-medium text-slate-400">/phút</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
+                    style="animation-delay: 0.3s;">
+                    <a href="#dang-ky"
+                        class="inline-flex justify-center items-center px-10 py-4 text-lg font-bold text-white bg-hero-gradient rounded-full shadow-xl shadow-blue-500/30 hover:-translate-y-1 transition duration-300">
+                        Dùng thử miễn phí 7 ngày
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard Preview (High Tech Feel) -->
+            <div class="mt-16 relative mx-auto max-w-6xl animate-fade-in-up" style="animation-delay: 0.5s;">
+                <div class="bg-slate-900 rounded-2xl p-2 shadow-2xl border border-slate-700">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                        alt="Dashboard" class="rounded-xl w-full h-auto object-cover opacity-90">
+                </div>
+                <!-- Floating Notification -->
+                <div class="absolute -top-6 right-10 bg-white p-4 rounded-xl shadow-xl border border-slate-100 hidden md:flex items-center gap-3 animate-bounce"
+                    style="animation-duration: 4s;">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600"><i
+                            class="fas fa-check"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-bold">CHIẾN DỊCH BĐS</p>
+                        <p class="text-sm font-bold text-slate-900">Đã chốt: GĐKD VinHomes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SOCIAL PROOF -->
+    <section class="py-10 border-y border-slate-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Hơn 5,000 Doanh nghiệp lớn đang
+                sử dụng</p>
+            <div
+                class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <span class="text-xl font-bold text-slate-700 flex items-center gap-2"><i class="fas fa-shield-alt"></i>
+                    Prudential</span>
+                <span class="text-xl font-bold text-slate-700 flex items-center gap-2"><i class="fas fa-building"></i>
+                    VINHOMES</span>
+                <span class="text-xl font-bold text-slate-700 flex items-center gap-2"><i class="fas fa-university"></i>
+                    VPBank</span>
+                <span class="text-xl font-bold text-slate-700 flex items-center gap-2"><i class="fas fa-chart-line"></i>
+                    MISA</span>
+                <span class="text-xl font-bold text-slate-700 flex items-center gap-2"><i
+                        class="fas fa-network-wired"></i> FPT</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CORE FEATURES (4 CHANNELS) -->
+    <section id="tinh-nang" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">4 Kênh tiếp cận – 1 Nền tảng
+                    duy nhất</h2>
+                <p class="text-slate-600 text-lg">Chào Sếp tự động hóa quy trình "săn" khách hàng VIP, giúp bạn xuất
+                    hiện ở mọi nơi họ hiện diện.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Zalo -->
+                <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100 transition duration-300">
+                    <div
+                        class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xl mb-4">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Zalo ZNS Official</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Gửi tin nhắn chăm sóc khách hàng với thương
+                        hiệu đã đăng ký (Verified). Tỷ lệ xem > 90%.</p>
+                    <div class="text-xs font-semibold text-brand-blue bg-blue-50 inline-block px-2 py-1 rounded">Rẻ hơn
+                        SMS 40%</div>
+                </div>
+
+                <!-- SMS -->
+                <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100 transition duration-300">
+                    <div
+                        class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 text-xl mb-4">
+                        <i class="fas fa-sms"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">SMS Brandname</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Hiển thị tên công ty thay vì số rác. Khẳng
+                        định uy tín thương hiệu ngay từ cái nhìn đầu tiên.</p>
+                    <div class="text-xs font-semibold text-indigo-600 bg-indigo-50 inline-block px-2 py-1 rounded">100%
+                        người nhận</div>
+                </div>
+
+                <!-- Email (Highlighted) -->
+                <div
+                    class="feature-card bg-white p-6 rounded-2xl border border-slate-100 transition duration-300 relative overflow-hidden group">
+                    <div
+                        class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-500 text-xl mb-4">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">Email Marketing</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Hệ thống gửi Email Amazon SES uy tín.
+                        Template chuẩn doanh nhân, vào Inbox, tránh Spam.</p>
+
+                    <!-- Mini visual of email template -->
+                    <div
+                        class="bg-slate-50 border border-slate-200 rounded p-2 mt-2 group-hover:bg-orange-50 transition">
+                        <div class="h-2 w-1/3 bg-slate-200 rounded mb-1"></div>
+                        <div class="h-2 w-full bg-slate-200 rounded mb-1"></div>
+                        <div class="h-2 w-2/3 bg-slate-200 rounded"></div>
+                        <div class="mt-2 text-[10px] text-green-600 font-bold"><i class="fas fa-check-circle"></i> Tỷ lệ
+                            mở 45%</div>
+                    </div>
+                </div>
+
+                <!-- Call -->
+                <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100 transition duration-300">
+                    <div
+                        class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl mb-4">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">AI Auto Call</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Gọi 10.000 cuộc/giờ bằng giọng đọc AI tự
+                        nhiên. Tự động lọc khách quan tâm chuyển về Sale.</p>
+                    <div class="text-xs font-semibold text-purple-600 bg-purple-50 inline-block px-2 py-1 rounded">Tiết
+                        kiệm 80% nhân sự</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. MOBILE APP (The Premium Block) -->
+    <section id="mobile-app" class="py-24 bg-brand-dark overflow-hidden relative">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-blue rounded-full opacity-20 blur-[120px]">
+        </div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-indigo rounded-full opacity-20 blur-[100px]">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Text Content -->
+                <div class="lg:w-5/12 text-white order-2 lg:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-300 text-xs font-bold uppercase tracking-wide mb-6">
+                        <i class="fas fa-mobile-alt"></i> Mobile App Đầu tiên tại VN
+                    </div>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 leading-tight">
+                        Quản lý chiến dịch<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">mọi
+                            lúc, mọi nơi.</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        Bạn đang đi gặp đối tác? Mọi báo cáo Realtime và quyền kiểm soát chiến dịch đều nằm gọn trong
+                        túi quần của bạn.
+                    </p>
+
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition">
+                                <i class="fas fa-fingerprint text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">One-Touch Send</h4>
+                                <p class="text-slate-400 text-sm">Bấm 1 nút - Gửi 10.000 tin Zalo/SMS ngay lập tức.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition">
+                                <i class="fas fa-bell text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Thông báo Realtime</h4>
+                                <p class="text-slate-400 text-sm">Nhận thông báo ngay khi Khách hàng phản hồi hoặc quan
+                                    tâm.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOMO Box -->
+                    <div
+                        class="p-5 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-xl backdrop-blur-md">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-yellow-400 uppercase tracking-wide"><i
+                                    class="fas fa-star mr-1"></i> Exclusive Offer</span>
+                            <span class="text-xs text-slate-400">Sắp ra mắt Q1/2026</span>
+                        </div>
+                        <p class="text-sm text-white mb-4">Đăng ký tài khoản doanh nghiệp hôm nay để nhận quyền lợi
+                            <strong>Miễn phí App trọn đời</strong>.</p>
+                        <a href="#dang-ky"
+                            class="block text-center w-full py-3 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-100 transition shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                            Đăng ký giữ chỗ (Slot) ngay
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Phone Mockups -->
+                <div class="lg:w-7/12 w-full order-1 lg:order-2 flex justify-center items-center relative h-[600px]">
+                    <!-- iPhone (Front) -->
+                    <div
+                        class="phone-frame w-[280px] h-[580px] absolute z-20 left-1/2 -translate-x-1/2 lg:left-20 lg:translate-x-0 animate-float">
+                        <div class="phone-notch"></div>
+                        <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover" alt="App Screen Dashboard">
+                        <!-- UI Overlay -->
+                        <div
+                            class="absolute bottom-6 left-4 right-4 bg-white/90 backdrop-blur p-3 rounded-xl shadow-lg border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white">
+                                    <i class="fas fa-check"></i></div>
+                                <div>
+                                    <p class="text-xs font-bold text-slate-800">Hoàn thành gửi tin</p>
+                                    <p class="text-[10px] text-slate-500">Chiến dịch: Sale BĐS Quận 2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Android (Back) -->
+                    <div
+                        class="phone-frame w-[260px] h-[540px] absolute z-10 left-1/2 translate-x-10 lg:left-60 bg-gray-900 border-gray-800 opacity-60 scale-95">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ce7d25?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover opacity-50" alt="App Screen Stats">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PRICING -->
+    <section id="bang-gia" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-display font-bold text-3xl text-slate-900 mb-4">Bảng giá minh bạch</h2>
+                <p class="text-slate-600">Chọn gói dữ liệu phù hợp với quy mô tăng trưởng của bạn.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+                <!-- Pro -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 hover:border-slate-400 transition">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Gói Pro</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-extrabold text-slate-900">15.000.000</span>
+                        <span class="text-slate-500 ml-2">VNĐ</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> 50.000 Data Boss
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> Tặng 1.000 ZNS
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-3"></i> Hỗ trợ Email
+                            Template</li>
+                    </ul>
+                    <a href="#dang-ky"
+                        class="block w-full py-3 px-6 text-center border-2 border-slate-200 rounded-xl font-bold text-slate-700 hover:border-slate-900 hover:text-slate-900 transition">Đăng
+                        ký Gói Pro</a>
+                </div>
+
+                <!-- Business -->
+                <div
+                    class="bg-slate-900 p-8 rounded-3xl shadow-2xl relative transform scale-105 border-4 border-brand-blue/20">
+                    <div
+                        class="absolute top-0 right-0 bg-brand-blue text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl rounded-tr-2xl">
+                        PHỔ BIẾN NHẤT</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Gói Business</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-extrabold text-white">39.000.000</span>
+                        <span class="text-slate-400 ml-2">VNĐ</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mb-6 pb-6 border-b border-slate-700">Giải pháp toàn diện cho Doanh
+                        nghiệp BĐS/Bảo hiểm.</p>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <strong>200.000 Data Boss</strong> (Full Info)</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i>
+                            <strong>Miễn phí App Mobile trọn đời</strong></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3"></i> Tích hợp
+                            đủ 4 kênh (Call/Zalo/SMS/Email)</li>
+                    </ul>
+                    <a href="#dang-ky"
+                        class="block w-full py-4 px-6 text-center bg-hero-gradient rounded-xl font-bold text-white hover:shadow-lg hover:shadow-blue-500/50 transition">
+                        Đăng ký Gói Business ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER & FORM -->
+    <footer id="dang-ky" class="bg-slate-50 pt-20 pb-10 border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Simple Form -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-16 border border-slate-100">
+                <div class="text-center mb-8">
+                    <h2 class="font-display font-bold text-3xl text-slate-900 mb-2">Nhận Demo & Báo giá</h2>
+                    <p class="text-slate-500">Chuyên viên sẽ liên hệ gửi tài khoản Demo sau 5 phút.</p>
+                </div>
+
+                <form class="space-y-4">
+                    <div>
+                        <input type="text"
+                            class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-blue outline-none transition font-medium"
+                            placeholder="Họ và tên của bạn">
+                    </div>
+                    <div>
+                        <input type="tel"
+                            class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-blue outline-none transition font-medium"
+                            placeholder="Số điện thoại (Zalo)">
+                    </div>
+                    <div>
+                        <input type="text"
+                            class="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-blue outline-none transition font-medium"
+                            placeholder="Tên công ty / Lĩnh vực">
+                    </div>
+                    <button type="submit"
+                        class="w-full py-4 bg-brand-dark text-white font-bold text-lg rounded-xl shadow-lg hover:bg-slate-800 transition transform hover:-translate-y-1">
+                        Xem Demo Dữ liệu ngay
+                    </button>
+                    <p class="text-center text-xs text-slate-400 mt-2"><i class="fas fa-lock mr-1"></i> Thông tin bảo
+                        mật 100%</p>
+                </form>
+            </div>
+
+            <!-- Footer Info -->
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm border-t border-slate-200 pt-8">
+                <div class="mb-4 md:mb-0 font-bold text-slate-700">© 2025 ChaoSep.com</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-brand-blue">Điều khoản</a>
+                    <a href="#" class="hover:text-brand-blue">Bảo mật</a>
+                    <a href="#" class="hover:text-brand-blue">Hỗ trợ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
