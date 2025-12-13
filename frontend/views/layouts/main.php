@@ -53,7 +53,7 @@ AppAsset::register($this);
 <body class="font-sans text-gray-800 antialiased bg-white">
 <?php $this->beginBody() ?>
 
-<nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
@@ -124,7 +124,9 @@ AppAsset::register($this);
                 </div>
             </div>
             <div class="border-t border-gray-100 pt-8 text-center text-sm text-gray-500">
-                &copy; 2025 Chào Sếp. All rights reserved. Design by Gemini Senior Partner.
+                &copy; 2025 Chào Sếp. All rights reserved.This website make by <a
+                                            href="https://stonenetworktech.com/" target="_blank"
+                                            rel="nofollow noopener" class="font-display font-extrabold text-2x2 tracking-tight text-brand-dark">StoneNewwork</a>
             </div>
         </div>
     </footer>
