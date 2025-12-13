@@ -2,7 +2,25 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'Chào Sếp - CRM & Marketing Automation';
+$this->title = 'Chào Sếp - Phần mềm CRM & Marketing Automation Việt Nam';
+
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Chào Sếp - Phần mềm CRM quản lý khách hàng và Marketing Automation hàng đầu Việt Nam. Tích hợp gọi điện, email marketing, Zalo ZNS, SMS, quản lý lead doanh nghiệp hiệu quả. Tăng doanh thu, tối ưu telesales cho doanh nghiệp B2B.',
+]);
+
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'phần mềm CRM, CRM Việt Nam, marketing automation, quản lý khách hàng, telesales, email marketing, Zalo ZNS, SMS marketing, phần mềm quản lý lead, CRM doanh nghiệp, tự động hóa marketing, Chào Sếp CRM',
+]);
+
+
+$this->registerMetaTag(['property' => 'og:title', 'content' => $this->title]);
+$this->registerMetaTag(['property' => 'og:description', 'content' => 'Chào Sếp - Giải pháp CRM & Marketing Automation chuyên sâu cho doanh nghiệp Việt Nam. Quản lý 1.5 triệu data doanh nghiệp, tích hợp multi-channel.']);
+$this->registerMetaTag(['property' => 'og:type', 'content' => 'website']);
+$this->registerMetaTag(['property' => 'og:url', 'content' => Yii::$app->request->absoluteUrl]);
+$this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80']); // Thay bằng link ảnh thực
+
 ?>
 <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
     <div class="absolute inset-0 bg-subtle-grid bg-grid-pattern opacity-50 -z-10"></div>
