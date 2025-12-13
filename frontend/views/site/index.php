@@ -2,7 +2,7 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'Chào Sếp - Nền tảng tiếp cận hơn 1.5 Triệu Chủ Doanh Nghiệp Việt Nam';
+$this->title = 'Chào Sếp - CRM & Marketing Automation';
 ?>
 <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
     <div class="absolute inset-0 bg-subtle-grid bg-grid-pattern opacity-50 -z-10"></div>
