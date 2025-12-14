@@ -119,6 +119,9 @@ AppAsset::register($this);
                         <li><a href="#" class="hover:text-brand-blue">Về chúng tôi</a></li>
                         <li><a href="#" class="hover:text-brand-blue">Liên hệ</a></li>
                         <li><a href="#" class="hover:text-brand-blue">Điều khoản</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Tin Tức</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">API</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Quyền Riêng Tư</a></li>
                     </ul>
                 </div>
                 <div>
