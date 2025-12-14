@@ -70,10 +70,9 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                         Dùng thử miễn phí 7 ngày
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
-                    <a href="#bang-gia"
-                        class="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-gray-700 bg-white border border-gray-200 rounded-full hover:bg-gray-50 transition duration-300">
-                        Xem bảng giá
-                    </a>
+                    <div class="flex items-center gap-2 text-slate-500 text-sm font-medium px-6">
+                        <i class="fas fa-shield-alt text-green-500"></i> Bảo mật 100%
+                    </div>
                 </div>
 
                 <p class="mt-4 text-sm text-gray-500">
@@ -132,31 +131,28 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                 </p>
 
                 <div class="space-y-6 mb-10">
-                    <div class="flex items-start gap-4">
+                    <div class="flex items-start gap-4 group">
                         <div
-                            class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400 mt-1">
-                            <i class="fas fa-rocket"></i>
-                        </div>
+                            class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition">
+                            <i class="fas fa-fingerprint text-xl"></i></div>
                         <div>
-                            <h4 class="font-bold text-lg">Bấm 1 phát - Gửi 10.000 tin</h4>
-                            <p class="text-slate-400 text-sm">Kích hoạt chiến dịch ngay trên app mà không cần mở
-                                laptop.</p>
+                            <h4 class="font-bold text-lg">One-Touch Send</h4>
+                            <p class="text-slate-400 text-sm">Bấm 1 nút - Gửi 10.000 tin Zalo/SMS ngay lập tức.</p>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4">
+                    <div class="flex items-start gap-4 group">
                         <div
-                            class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 mt-1">
-                            <i class="fas fa-bell"></i>
-                        </div>
+                            class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition">
+                            <i class="fas fa-bell text-xl"></i></div>
                         <div>
                             <h4 class="font-bold text-lg">Thông báo Realtime</h4>
-                            <p class="text-slate-400 text-sm">Điện thoại "ting ting" ngay khi Boss khách hàng trả
-                                lời tin nhắn.</p>
+                            <p class="text-slate-400 text-sm">Nhận thông báo ngay khi Khách hàng phản hồi hoặc quan
+                                tâm.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
                         <div
-                            class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 mt-1">
+                            class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div>
