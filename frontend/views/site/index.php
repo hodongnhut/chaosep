@@ -42,7 +42,7 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                 </h1>
 
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Nền tảng giúp bạn tiếp cận trực tiếp <strong>1.500.000+ Chủ doanh nghiệp & GĐKD</strong> tại
+                    Nền tảng giúp bạn tiếp cận trực tiếp <strong>2.000.000+ Chủ doanh nghiệp & GĐKD</strong> tại
                     Việt Nam qua hệ thống gửi tin nhắn và gọi tự động thông minh.
                 </p>
 
