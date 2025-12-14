@@ -100,6 +100,8 @@ AppAsset::register($this);
                     </span>
                     <p class="mt-4 text-gray-500 text-sm">Giải pháp tiếp cận khách hàng cao cấp B2B hàng đầu Việt Nam.
                     </p>
+                    <p class="mt-4 text-gray-500 text-sm">Địa Chỉ
+                    Tòa nhà BCONS POLYGON Tower, 15 Bế Văn Đàn, An Bình, Dĩ An, Tp.HCM</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-gray-900 mb-4">Sản phẩm</h4>
