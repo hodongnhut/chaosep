@@ -62,6 +62,11 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                         <span class="font-bold text-gray-900">1.200đ</span>
                         <span class="text-sm text-gray-500">/Phút gọi</span>
                     </div>
+                    <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg border border-gray-200">
+                        <i class="fas fa-envelope text-brand-blue"></i>
+                        <span class="font-bold text-gray-900">Email</span>
+                        <span class="text-sm text-gray-500">- Không giới hạn</span>
+                    </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
