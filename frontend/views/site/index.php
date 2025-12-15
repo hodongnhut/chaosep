@@ -49,12 +49,12 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                 <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-10">
                     <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg border border-gray-200">
                         <i class="fas fa-bolt text-yellow-500"></i>
-                        <span class="font-bold text-gray-900">450đ</span>
+                        <span class="font-bold text-gray-900">150đ</span>
                         <span class="text-sm text-gray-500">/Zalo ZNS</span>
                     </div>
                     <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg border border-gray-200">
                         <i class="fas fa-comment-alt text-brand-blue"></i>
-                        <span class="font-bold text-gray-900">700đ</span>
+                        <span class="font-bold text-gray-900">299đ</span>
                         <span class="text-sm text-gray-500">/SMS Brand</span>
                     </div>
                     <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg border border-gray-200">
