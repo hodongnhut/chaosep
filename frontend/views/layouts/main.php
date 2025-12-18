@@ -135,7 +135,7 @@ AppAsset::register($this);
             </div>
             <div class="border-t border-gray-100 pt-8 text-center text-sm text-gray-500">
                 &copy; 2025 Chào Sếp. All rights reserved.This website make by 
-                <a href="https://stonenetworktech.com/" target="_blank" rel="nofollow noopener" class="font-display font-extrabold text-2x2 tracking-tight text-brand-dark">StoneNewwork</a>
+                <a href="https://stonenetworktech.com/" target="_blank" rel="nofollow noopener" class="font-display font-extrabold text-2x2 tracking-tight text-brand-dark">StoneNetwork</a>
             </div>
         </div>
     </footer>
