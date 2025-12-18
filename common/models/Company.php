@@ -51,6 +51,7 @@ class Company extends \yii\db\ActiveRecord
     {
         return [
             [['company_name_en', 'address', 'tax_notification_address', 'legal_representative', 'director', 'chief_accountant', 'established_date', 'closed_date', 'industry', 'province', 'district', 'ward', 'phone', 'email', 'website', 'capital', 'employee_count'], 'default', 'value' => null],
+            [['is_active'], 'boolean'],
             [['is_active'], 'default', 'value' => 1],
             [['exists_in_gdt'], 'default', 'value' => 0],
             [['tax_code', 'company_name'], 'required'],

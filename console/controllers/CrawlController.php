@@ -75,7 +75,7 @@ class CrawlController extends Controller
                 $company->province = $item['TinhThanhTitle'] ?? null;
                 $company->district = $item['QuanHuyenTitle'] ?? null;
                 $company->ward = $item['PhuongXaTitle'] ?? null;
-                $company->is_active = !$item['IsDelete'];
+                $company->is_active = $item['IsDelete'] ? 0 : 1;
 
                 if ($company->save()) {
                     $inserted++;
