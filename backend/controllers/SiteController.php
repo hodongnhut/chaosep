@@ -7,7 +7,7 @@ use yii\rest\Controller;
 use yii\filters\auth\HttpBearerAuth;
 use yii\web\Response;
 use common\models\LoginForm;
-use common\models\User;  // Giả sử model User có access_token
+use yii\filters\Cors;
 
 class SiteController extends Controller
 {
@@ -28,6 +28,17 @@ class SiteController extends Controller
         $behaviors['authenticator'] = [
             'class' => HttpBearerAuth::class,
             'except' => ['login', 'index'],
+        ];
+
+        $behaviors['corsFilter'] = [
+            'class' => Cors::class,
+            'cors' => [
+                'Origin' => ['*'], 
+                'Access-Control-Request-Method' => ['POST', 'GET', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
+                'Access-Control-Request-Headers' => ['*'],
+                'Access-Control-Allow-Credentials' => true,
+                'Access-Control-Max-Age' => 3600,
+            ],
         ];
 
         return $behaviors;
