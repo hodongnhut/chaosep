@@ -139,6 +139,48 @@ AppAsset::register($this);
             </div>
         </div>
     </footer>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuBtn = document.querySelector('.md\\:hidden button');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-menu fixed top-0 right-0';
+    mobileMenu.innerHTML = `
+      <div class="text-right mb-8">
+        <button class="text-3xl text-gray-600" id="closeMenu">&times;</button>
+      </div>
+      <a href="#tinh-nang">Giải Pháp</a>
+      <a href="#mobile-app">Ứng dụng</a>
+      <a href="#bang-gia">Bảng giá</a>
+      <a href="#dang-ky" class="inline-block mt-8 w-full text-center py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-full">Đăng ký miễn phí</a>
+    `;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+
+    document.body.appendChild(mobileMenu);
+    document.body.appendChild(overlay);
+
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    overlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelector('#closeMenu').addEventListener('click', closeMenu);
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  });
+</script>
 
 <?php $this->endBody() ?>
 </body>

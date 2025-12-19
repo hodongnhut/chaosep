@@ -60,3 +60,164 @@
     border-bottom-right-radius: 12px;
     z-index: 10;
 }
+
+/* Mobile Menu Toggle */
+.mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+/* Navbar mobile */
+@media (max-width: 767px) {
+    .md\\:flex {
+        display: none;
+    }
+
+    .md\\:hidden {
+        display: flex;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 80%;
+        max-width: 320px;
+        background: white;
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        z-index: 1000;
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+    }
+
+    .mobile-menu a {
+        display: block;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #1e293b;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .mobile-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+
+    .overlay.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Padding & spacing mobile */
+    .max-w-7xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Hero section mobile */
+    h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .text-lg {
+        font-size: 1.1rem;
+    }
+
+    /* Pricing cards */
+    .md\\:flex-row {
+        flex-direction: column;
+    }
+
+    .md\\:-translate-y-4 {
+        transform: none;
+    }
+
+    /* Form đăng ký */
+    input,
+    button {
+        font-size: 1rem !important;
+        /* Tránh zoom iOS */
+    }
+
+    /* Phone mockup */
+    .phone-mockup {
+        width: 260px !important;
+        height: 540px !important;
+    }
+
+    .translate-x-20 {
+        transform: translateX(40px) translateY(40px) !important;
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ẩn hoàn toàn mobile menu trên desktop */
+@media (min-width: 768px) {
+
+    .mobile-menu,
+    .overlay {
+        display: none !important;
+    }
+}
+
+/* Đảm bảo menu desktop hiển thị đúng */
+@media (max-width: 767px) {
+    .md\\:flex {
+        display: none !important;
+    }
+
+    .md\\:hidden {
+        display: flex !important;
+    }
+}
+
+/* Chỉ áp dụng trên mobile (dưới 768px) */
+@media (max-width: 767px) {
+
+    /* Chuyển flex thành grid với 2 cột trên mobile */
+    .price-features-container {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        /* 2 cột */
+        gap: 12px !important;
+        /* Khoảng cách giữa các item */
+        justify-items: center;
+        /* Căn giữa các item */
+    }
+
+    /* Đảm bảo mỗi item vẫn giữ kích thước đẹp */
+    .price-features-container>div {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+    }
+}
+
+/* Trên tablet trở lên (≥768px) giữ nguyên flex 4 items/hàng */
+@media (min-width: 768px) {
+    .price-features-container {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

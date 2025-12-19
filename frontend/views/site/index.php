@@ -46,7 +46,7 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                     Việt Nam qua hệ thống gửi tin nhắn và gọi tự động thông minh.
                 </p>
 
-                <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-10">
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-10 price-features-container">
                     <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-lg border border-gray-200">
                         <i class="fas fa-bolt text-yellow-500"></i>
                         <span class="font-bold text-gray-900">150đ</span>
