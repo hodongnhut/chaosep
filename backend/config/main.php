@@ -28,6 +28,7 @@ return [
             'enableAutoLogin' => false,
             'loginUrl' => null,
         ],
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
