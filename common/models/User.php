@@ -30,6 +30,7 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_ACTIVE = 10;
 
 
+
     /**
      * {@inheritdoc}
      */
@@ -56,8 +57,11 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
+            [['access_token'], 'string', 'max' => 255],
+            [['access_token_expire'], 'integer']
         ];
     }
+    
 
     /**
      * {@inheritdoc}
@@ -72,7 +76,35 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        return static::find()
+            ->where(['access_token' => $token])
+            ->andWhere(['>', 'access_token_expire', time()])
+            ->andWhere(['status' => self::STATUS_ACTIVE])
+            ->one();
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function generateAccessToken($days = 30)
+    {
+        $this->access_token = Yii::$app->security->generateRandomString(64);
+        $this->access_token_expire = time() + 3600 * 24 * $days;
+    
+
+        if (!$this->save(false)) {
+            // Log lỗi để debug (xem trong storage/logs/app.log)
+            Yii::error('Failed to save access_token for user ' . $this->id . ': ' . json_encode($this->errors));
+            throw new \yii\web\ServerErrorHttpException('Failed to generate token');
+        }
+    
+        return $this->access_token;
+    }
+
+    public function refreshAccessToken($days = 30)
+    {
+        return $this->generateAccessToken($days);
     }
 
     /**
