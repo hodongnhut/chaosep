@@ -30,17 +30,6 @@ class SiteController extends Controller
             'except' => ['login', 'index'],
         ];
 
-        $behaviors['corsFilter'] = [
-            'class' => Cors::class,
-            'cors' => [
-                'Origin' => ['*'], 
-                'Access-Control-Request-Method' => ['POST', 'GET', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
-                'Access-Control-Request-Headers' => ['*'],
-                'Access-Control-Allow-Credentials' => true,
-                'Access-Control-Max-Age' => 3600,
-            ],
-        ];
-
         return $behaviors;
     }
 
