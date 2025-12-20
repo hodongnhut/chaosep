@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\controllers;  // Hoặc api\modules\v1\controllers nếu dùng module
+namespace backend\controllers;
 
 use Yii;
 use yii\rest\Controller;
