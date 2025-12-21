@@ -29,7 +29,6 @@ class EnrichCompanyCommand extends Controller
             $companies = Company::find()
                 ->where(['>=', 'id', $id])
                 ->andWhere(['<', 'id', $id + $this->batchSize])
-                // ->andWhere(['exists_in_gdt' => 0]) // Bỏ comment nếu chỉ muốn enrich những chưa có data
                 ->orderBy('id')
                 ->all();
 
@@ -83,37 +82,61 @@ class EnrichCompanyCommand extends Controller
     /**
      * Call API bằng pure CURL
      */
-    private function curlGet($url)
+    private function curlGet($url, $retry = 3)
     {
-        $ch = curl_init();
+        for ($i = 1; $i <= $retry; $i++) {
+            $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Bỏ verify SSL nếu cần (thường API public ổn)
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Yii2 Cron Enrich Company');
+            curl_setopt_array($ch, [
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_TIMEOUT => 15,
+                CURLOPT_CONNECTTIMEOUT => 10,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false,
 
-        $response = curl_exec($ch);
+                // Fake browser
+                CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36',
 
-        if (curl_error($ch)) {
-            // curl error
+                CURLOPT_HTTPHEADER => [
+                    'Accept: application/json, text/plain, */*',
+                    'Accept-Language: vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+                    'Connection: keep-alive',
+                    'Cache-Control: no-cache',
+                    'Pragma: no-cache',
+                ],
+            ]);
+
+            $response = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $error = curl_error($ch);
+
             curl_close($ch);
-            return false;
+
+
+            if ($error || $httpCode !== 200 || empty($response)) {
+                usleep(rand(1500000, 3000000)); // 1.5–3s
+                continue;
+            }
+
+            if (stripos($response, '<html') !== false) {
+                usleep(rand(2000000, 4000000));
+                continue;
+            }
+
+            $data = json_decode($response, true);
+
+            if (json_last_error() === JSON_ERROR_NONE && is_array($data)) {
+                return $data;
+            }
+
+            usleep(rand(1500000, 3000000));
         }
 
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($httpCode !== 200) {
-            return false;
-        }
-
-        $data = json_decode($response, true);
-
-        return is_array($data) ? $data : false;
+        return false;
     }
+
 
     private function updateCompanyFromApi(Company $company, array $data)
     {
