@@ -7,7 +7,7 @@ use yii\console\Controller;
 use yii\helpers\Console;
 use common\models\Company;
 
-class EnrichCompanyCommand extends Controller
+class EnrichCompanyController extends Controller
 {
     public $batchSize = 100;
 
