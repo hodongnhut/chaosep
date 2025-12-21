@@ -18,66 +18,90 @@ class EnrichCompanyController extends Controller
 
     public function actionIndex()
     {
-        $this->stdout("Bắt đầu enrich data công ty từ API thongtindoanhnghiep.co (dùng pure CURL)\n", Console::FG_YELLOW);
+        $this->stdout(
+            "Start enrich company (batchSize={$this->batchSize})\n",
+            Console::FG_YELLOW
+        );
+
+        $stateFile = Yii::getAlias('@runtime/enrich_company_last_id.txt');
+
+        // Lấy startId
+        $startId = 1;
+        if (file_exists($stateFile)) {
+            $startId = (int) file_get_contents($stateFile);
+        }
 
         $maxId = Company::find()->max('id');
+
+        if ($startId > $maxId) {
+            $this->stdout("DONE – All companies enriched\n", Console::FG_GREEN);
+            return;
+        }
+
+        $endId = min($startId + $this->batchSize - 1, $maxId);
+
+        $this->stdout(
+            "Processing ID {$startId} → {$endId}\n",
+            Console::FG_CYAN
+        );
+
+        $companies = Company::find()
+            ->where(['>=', 'id', $startId])
+            ->andWhere(['<=', 'id', $endId])
+            ->orderBy('id')
+            ->all();
+
         $processed = 0;
         $success = 0;
         $failed = 0;
 
-        for ($id = 1; $id <= $maxId; $id += $this->batchSize) {
-            $companies = Company::find()
-                ->where(['>=', 'id', $id])
-                ->andWhere(['<', 'id', $id + $this->batchSize])
-                ->orderBy('id')
-                ->all();
-
-            if (empty($companies)) {
+        foreach ($companies as $company) {
+            if (empty($company->tax_code)) {
                 continue;
             }
 
-            foreach ($companies as $company) {
-                if (empty($company->tax_code)) {
-                    continue;
-                }
+            $taxCode = trim($company->tax_code);
+            $url = 'https://thongtindoanhnghiep.co/api/company/' . $taxCode;
 
-                $taxCode = trim($company->tax_code);
-                $url = 'https://thongtindoanhnghiep.co/api/company/' . $taxCode;
+            $data = $this->curlGet($url);
 
-                $data = $this->curlGet($url);
+            if ($data === false) {
+                $failed++;
+                $this->stdout("CURL ERROR [ID {$company->id}] {$taxCode}\n", Console::FG_RED);
+            } elseif (isset($data['MaSoThue'])) {
+                $this->updateCompanyFromApi($company, $data);
+                $company->exists_in_gdt = 1;
+                $company->is_active = $data['IsDelete'] ? 0 : 1;
 
-                if ($data === false) {
-                    $failed++;
-                    $this->stdout("CURL ERROR [ID {$company->id}] {$taxCode}\n", Console::FG_RED);
-                } elseif ($data && isset($data['MaSoThue'])) {
-                    $this->updateCompanyFromApi($company, $data);
-                    $company->exists_in_gdt = 1;
-                    $company->is_active = $data['IsDelete'] ? 0 : 1;
-
-                    if ($company->save(false)) {
-                        $success++;
-                        $this->stdout("SUCCESS [ID {$company->id}] {$taxCode} - {$data['Title']}\n", Console::FG_GREEN);
-                    } else {
-                        $failed++;
-                        $this->stdout("SAVE FAILED [ID {$company->id}] {$taxCode}\n", Console::FG_RED);
-                    }
+                if ($company->save(false)) {
+                    $success++;
+                    $this->stdout("SUCCESS [ID {$company->id}] {$taxCode}\n", Console::FG_GREEN);
                 } else {
                     $failed++;
-                    $this->stdout("NO DATA [ID {$company->id}] {$taxCode}\n", Console::FG_YELLOW);
+                    $this->stdout("SAVE FAILED [ID {$company->id}] {$taxCode}\n", Console::FG_RED);
                 }
-
-                // Rate limit nhẹ để tránh bị block
-                usleep(rand(1000000, 2000000)); // 1-2 giây
-                $processed++;
+            } else {
+                $failed++;
+                $this->stdout("NO DATA [ID {$company->id}] {$taxCode}\n", Console::FG_YELLOW);
             }
 
-            // Reset DB connection nếu chạy lâu
-            Yii::$app->db->close();
-            Yii::$app->db->open();
+            usleep(rand(2000000, 4000000)); // 2–4s
+            $processed++;
         }
 
-        $this->stdout("Hoàn thành! Processed: $processed | Success: $success | Failed: $failed\n", Console::FG_PURPLE);
+        // Lưu ID cho lần chạy tiếp theo
+        file_put_contents($stateFile, $endId + 1);
+
+        // Reset DB
+        Yii::$app->db->close();
+        Yii::$app->db->open();
+
+        $this->stdout(
+            "DONE batch | Processed: {$processed} | Success: {$success} | Failed: {$failed}\n",
+            Console::FG_PURPLE
+        );
     }
+
 
     /**
      * Call API bằng pure CURL
