@@ -85,7 +85,7 @@ class CrawlController extends Controller
             }
 
             $this->stdout("Đã lưu $inserted records\n", Console::FG_GREEN);
-            sleep($this->delay); // Delay tránh bị block
+            sleep($this->delay);
         }
 
         $this->stdout("Crawl hoàn tất!\n", Console::FG_YELLOW);
