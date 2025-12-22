@@ -126,7 +126,7 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                     <i class="fas fa-mobile-alt"></i> Mobile CRM Đầu Tiên Tại VN
                 </div>
                 <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 leading-tight">
-                    Quản Lý Pipeline & Lead<br>
+                    CRM Đầy Đủ Trên Mobile<br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Quản lý Pipeline, Lead Scoring mọi lúc.</span>
                 </h2>
                 <p class="text-slate-400 text-lg mb-8 leading-relaxed">
