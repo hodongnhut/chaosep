@@ -211,28 +211,28 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
 <section id="crm-features" class="py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">Tính Năng CRM Thông Minh - Sắp Ra Mắt 2026</h2>
-            <p class="text-slate-600 text-lg">Từ outbound mạnh mẽ đến quản lý deal toàn diện với AI – Chào Sếp sẽ là CRM Việt Nam dẫn đầu.</p>
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">Tính Năng CRM Thông Minh - Ra Mắt Đầy Đủ 2026</h2>
+            <p class="text-slate-600 text-lg">Từ outbound mạnh mẽ đến quản lý deal toàn diện với AI – Chào Sếp sẽ là CRM Việt Nam dẫn đầu thị trường B2B.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100">
-                <img src="https://senegalsoftware.com/wp-content/uploads/2025/11/edited-CRM-dashboard-1024x525.jpg" alt="Dashboard Realtime & Pipeline View" class="rounded-lg mb-4 w-full h-48 object-cover">
-                <h3 class="font-bold text-lg">Dashboard & Pipeline Sales</h3>
-                <p class="text-sm text-slate-600">Theo dõi realtime doanh số, pipeline stages, win rate từng sales.</p>
+            <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100 shadow-hover">
+                <img src="https://multipurposethemes.com/wp-content/uploads/2025/05/CRM-Admin-Templates-1200x675.jpg" alt="Pipeline Sales & Dashboard Realtime" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h3 class="font-bold text-lg">Pipeline Sales & Dashboard Realtime</h3>
+                <p class="text-sm text-slate-600">Theo dõi stages deal, doanh số từng sales, gamification đội ngũ.</p>
             </div>
-            <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100">
-                <img src="https://cdn.prod.website-files.com/678f4842b98b4218c2ec6c28/67b5094e6d74c4cfff48f704_66a8ba85ebaaf4c623791f45_AD_4nXecwu8TzXFUZjdsvTFti7zgZ6_fja-XqCx7YB6XqHj9-pbaj5aAnVuA7OYpLkRlu9csJ087dXi855po-_7RNzzo1wO6nf9AzI63O2sT2MXbwcesiKeq0Edy5Dq60_KK-1ycBZMoESoVjQx8LGvAJZo2t9bs.webp" alt="AI Lead Scoring" class="rounded-lg mb-4 w-full h-48 object-cover">
+            <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100 shadow-hover">
+                <img src="https://www.hubspot.com/hs-fs/hubfs/Lead%20Scoring%20(1).png" alt="AI Lead Scoring" class="rounded-lg mb-4 w-full h-48 object-cover">
                 <h3 class="font-bold text-lg">AI Lead Scoring & Next Best Action</h3>
-                <p class="text-sm text-slate-600">AI chấm điểm lead nóng, gợi ý "Gọi ngay" hoặc "Gửi báo giá".</p>
+                <p class="text-sm text-slate-600">AI chấm điểm lead nóng/lạnh, gợi ý hành động tối ưu realtime.</p>
             </div>
-            <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100">
-                <img src="https://www.hubspot.com/hs-fs/hubfs/contact-record-wide@2x%20(1).webp?width=1920&height=1080&name=contact-record-wide@2x%20(1).webp" alt="AI Powered CRM Features" class="rounded-lg mb-4 w-full h-48 object-cover">
+            <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100 shadow-hover">
+                <img src="https://www.geckoboard.com/uploads/Sales-Team-Leaderboard-dashboard.png" alt="Gamification & Team Analytics" class="rounded-lg mb-4 w-full h-48 object-cover">
                 <h3 class="font-bold text-lg">Conversation Intelligence & Caller ID</h3>
-                <p class="text-sm text-slate-600">Phân tích cuộc gọi/chat, pop-up info khách, ghi âm tự động.</p>
+                <p class="text-sm text-slate-600">Phân tích cuộc gọi, pop-up info khách, ghi âm tự động gắn lead.</p>
             </div>
         </div>
         <div class="text-center mt-12">
-            <a href="#dang-ky" class="inline-block px-8 py-4 bg-hero-gradient text-white font-bold rounded-full hover:shadow-lg transition">Đăng ký nhận Beta CRM Module miễn phí</a>
+            <a href="#dang-ky" class="inline-block px-8 py-4 bg-hero-gradient text-white font-bold rounded-full hover:shadow-lg transition">Đăng ký Beta CRM Module miễn phí ngay</a>
         </div>
     </div>
 </section>
