@@ -2,11 +2,11 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'Chào Sếp - Phần mềm CRM & Marketing Automation Việt Nam';
+$this->title = 'Chào Sếp - Phần mềm CRM Quản lý Lead, Pipeline Sales & Marketing Automation Việt Nam';
 
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Chào Sếp - Phần mềm CRM quản lý khách hàng và Marketing Automation hàng đầu Việt Nam. Tích hợp gọi điện, email marketing, Zalo ZNS, SMS, quản lý lead doanh nghiệp hiệu quả. Tăng doanh thu, tối ưu telesales cho doanh nghiệp B2B.',
+    'content' => 'Chào Sếp - CRM & Marketing Automation hàng đầu Việt Nam. Quản lý pipeline sales, AI lead scoring, dashboard realtime, tích hợp Zalo ZNS, SMS, Email, AI Call. Tăng doanh thu B2B nhanh chóng.',
 ]);
 
 $this->registerMetaTag([
@@ -39,11 +39,11 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                     class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-[1.15] mb-6">
                     Chào đúng Sếp.<br>
                     <span class="text-gradient">Chốt đúng Deal.</span>
+                    <span class="text-gradient">Quản lý Lead. Chốt Deal Nhanh.</span>
                 </h1>
 
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Nền tảng giúp bạn tiếp cận trực tiếp <strong>2.000.000+ Chủ doanh nghiệp & GĐKD</strong> tại
-                    Việt Nam qua hệ thống gửi tin nhắn và gọi tự động thông minh.
+                    Nền tảng CRM toàn diện giúp tiếp cận <strong>2.000.000+ Chủ doanh nghiệp</strong>, quản lý pipeline sales thông minh với AI lead scoring, dashboard realtime & mobile app mạnh mẽ.
                 </p>
 
                 <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-10 price-features-container">
@@ -90,7 +90,7 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
             <div class="relative lg:h-auto">
                 <div
                     class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white p-2 animate-fade-in-up">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Chào Sếp CRM Dashboard với Pipeline & AI Insights"
                         alt="Dashboard Analytics" class="rounded-xl w-full h-auto object-cover opacity-95">
 
                     <div class="absolute bottom-10 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4 animate-bounce"
@@ -123,16 +123,14 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
             <div class="lg:w-1/2 text-white">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-blue-300 text-xs font-bold uppercase tracking-wide mb-6">
-                    <i class="fas fa-mobile-alt"></i> Mobile App Đầu tiên tại VN
+                    <i class="fas fa-mobile-alt"></i> CRM Đầy Đủ Trên Mobile
                 </div>
                 <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 leading-tight">
-                    Quản lý chiến dịch<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">mọi
-                        lúc, mọi nơi.</span>
+                    CRM Đầy Đủ Trên Mobile<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Quản lý Pipeline, Lead Scoring mọi lúc.</span>
                 </h2>
                 <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                    Bạn đang đi đánh Golf hay gặp đối tác? Chỉ cần mở điện thoại, mọi chỉ số kinh doanh và chiến
-                    dịch đều nằm trong tầm kiểm soát.
+                    Xem dashboard realtime, cập nhật deal, nhận AI gợi ý next action ngay trên điện thoại – dù đang gặp khách hay đánh golf.
                 </p>
 
                 <div class="space-y-6 mb-10">
@@ -209,6 +207,35 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
         </div>
     </div>
 </section>
+
+<section id="crm-features" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-display font-bold text-3xl md:text-4xl text-slate-900 mb-4">Tính Năng CRM Thông Minh - Sắp Ra Mắt 2026</h2>
+                <p class="text-slate-600 text-lg">Từ outbound mạnh mẽ đến quản lý deal toàn diện với AI – Chào Sếp sẽ là CRM Việt Nam dẫn đầu.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100">
+                    <img src="https://senegalsoftware.com/wp-content/uploads/2025/11/edited-CRM-dashboard-1024x525.jpg" alt="Dashboard Realtime & Pipeline View" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="font-bold text-lg">Dashboard & Pipeline Sales</h3>
+                    <p class="text-sm text-slate-600">Theo dõi realtime doanh số, pipeline stages, win rate từng sales.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100">
+                    <img src="https://cdn.prod.website-files.com/678f4842b98b4218c2ec6c28/67b5094e6d74c4cfff48f704_66a8ba85ebaaf4c623791f45_AD_4nXecwu8TzXFUZjdsvTFti7zgZ6_fja-XqCx7YB6XqHj9-pbaj5aAnVuA7OYpLkRlu9csJ087dXi855po-_7RNzzo1wO6nf9AzI63O2sT2MXbwcesiKeq0Edy5Dq60_KK-1ycBZMoESoVjQx8LGvAJZo2t9bs.webp" alt="AI Lead Scoring" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="font-bold text-lg">AI Lead Scoring & Next Best Action</h3>
+                    <p class="text-sm text-slate-600">AI chấm điểm lead nóng, gợi ý "Gọi ngay" hoặc "Gửi báo giá".</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-2xl border border-slate-100">
+                    <img src="https://www.hubspot.com/hs-fs/hubfs/contact-record-wide@2x%20(1).webp?width=1920&height=1080&name=contact-record-wide@2x%20(1).webp" alt="AI Powered CRM Features" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="font-bold text-lg">Conversation Intelligence & Caller ID</h3>
+                    <p class="text-sm text-slate-600">Phân tích cuộc gọi/chat, pop-up info khách, ghi âm tự động.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#dang-ky" class="inline-block px-8 py-4 bg-hero-gradient text-white font-bold rounded-full hover:shadow-lg transition">Đăng ký nhận Beta CRM Module miễn phí</a>
+            </div>
+        </div>
+    </section>
 
 <section class="py-10 border-y border-gray-100 bg-gray-50/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
