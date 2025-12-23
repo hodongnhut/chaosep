@@ -39,7 +39,6 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                     class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-[1.15] mb-6">
                     Chào đúng Sếp.<br>
                     <span class="text-gradient">Chốt đúng Deal.</span>
-                    <span class="text-gradient">Quản lý Lead. Chốt Deal Nhanh.</span>
                 </h1>
 
                 <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
