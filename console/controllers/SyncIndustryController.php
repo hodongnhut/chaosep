@@ -19,7 +19,7 @@ class SyncIndustryController extends Controller
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 60); // Tăng timeout vì danh sách ngành khá dài
+        curl_setopt($ch, CURLOPT_TIMEOUT, 60);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -31,16 +31,18 @@ class SyncIndustryController extends Controller
         }
 
         $data = json_decode($response, true);
-        if (!is_array($data)) {
-            $this->stdout("Dữ liệu API không đúng định dạng (không phải array)\n", Console::FG_RED);
+
+        if (!is_array($data) || !isset($data['LtsItem']) || !is_array($data['LtsItem'])) {
+            $this->stdout("Dữ liệu API không đúng định dạng (thiếu LtsItem)\n", Console::FG_RED);
             return Controller::EXIT_CODE_ERROR;
         }
 
-        $total = count($data);
+        $items = $data['LtsItem'];
+        $total = count($items);
         $inserted = 0;
         $updated = 0;
 
-        foreach ($data as $item) {
+        foreach ($items as $item) {
             $industry = Industry::findOne(['api_id' => $item['ID']]);
 
             if (!$industry) {
