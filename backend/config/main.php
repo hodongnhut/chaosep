@@ -13,6 +13,16 @@ return [
     'bootstrap' => ['log'],
 
     'modules' => [],
+    'as corsFilter' => [
+        'class' => yii\filters\Cors::class,
+        'cors' => [
+            'Origin' => ['https://app.chaosep.com'],
+            'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+            'Access-Control-Allow-Headers' => ['Authorization', 'Content-Type'],
+            'Access-Control-Allow-Credentials' => true,
+            'Access-Control-Max-Age' => 86400,
+        ],
+    ],
 
     'components' => [
         'request' => [
