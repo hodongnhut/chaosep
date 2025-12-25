@@ -333,74 +333,97 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
 </section>
 
 <section id="bang-gia" class="py-24 bg-gray-900 text-white relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div class="absolute w-96 h-96 bg-brand-blue rounded-full blur-[128px] opacity-20 -top-20 -left-20"></div>
-        <div class="absolute w-96 h-96 bg-brand-indigo rounded-full blur-[128px] opacity-20 bottom-0 right-0"></div>
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+    <div class="absolute w-96 h-96 bg-brand-blue rounded-full blur-[128px] opacity-20 -top-20 -left-20"></div>
+    <div class="absolute w-96 h-96 bg-brand-indigo rounded-full blur-[128px] opacity-20 bottom-0 right-0"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
+        Đầu tư nhỏ – Lợi nhuận lớn
+      </h2>
+      <p class="text-lg text-gray-400">
+        Chọn gói dữ liệu phù hợp với quy mô tăng trưởng của bạn.
+      </p>
     </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
-                Đầu tư nhỏ – Lợi nhuận lớn
-            </h2>
-            <p class="text-lg text-gray-400">
-                Chọn gói dữ liệu phù hợp với quy mô tăng trưởng của bạn.
-            </p>
+    <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+      <!-- Gói Starter MỚI -->
+      <div class="w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:border-gray-500 transition">
+        <h3 class="text-xl font-semibold text-gray-300 mb-2">Gói Starter</h3>
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class="text-4xl font-bold text-white">8.000.000</span>
+          <span class="text-gray-400">VNĐ</span>
         </div>
+        <p class="text-gray-400 text-sm mb-8 border-b border-gray-700 pb-8">
+          Lý tưởng cho cá nhân, freelancer hoặc team sales mới bắt đầu tiếp cận lead B2B.
+        </p>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
+            <strong>20.000 Data Boss</strong> chất lượng cơ bản
+          </li>
+          <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
+            Tặng 500 ZNS miễn phí
+          </li>
+          <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
+            Support qua Zalo cơ bản
+          </li>
+        </ul>
+        <a href="#dang-ky" class="block w-full py-3 px-4 bg-gray-700 text-white text-center font-semibold rounded-lg hover:bg-gray-600 transition">
+          Đăng ký Gói Starter
+        </a>
+      </div>
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-8">
-            <div
-                class="w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:border-gray-500 transition">
-                <h3 class="text-xl font-semibold text-gray-300 mb-2">Gói Pro</h3>
-                <div class="flex items-baseline gap-1 mb-6">
-                    <span class="text-4xl font-bold text-white">15.000.000</span>
-                    <span class="text-gray-400">VNĐ</span>
-                </div>
-                <p class="text-gray-400 text-sm mb-8 border-b border-gray-700 pb-8">Dành cho cá nhân hoặc team sales
-                    nhỏ muốn tiếp cận khách hàng tiềm năng.</p>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
-                        50.000 Data Boss chất lượng</li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
-                        Tặng 1.000 ZNS miễn phí</li>
-                    <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
-                        Support qua Zalo</li>
-                </ul>
-                <a href="#dang-ky"
-                    class="block w-full py-3 px-4 bg-gray-700 text-white text-center font-semibold rounded-lg hover:bg-gray-600 transition">Đăng
-                    ký Gói Pro</a>
-            </div>
-
-            <div
-                class="w-full max-w-md bg-white text-gray-900 rounded-2xl p-8 border-4 border-brand-blue relative transform md:-translate-y-4 shadow-2xl shadow-blue-900/50">
-                <div
-                    class="absolute top-0 right-0 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-                    PHỔ BIẾN NHẤT</div>
-                <h3 class="text-xl font-semibold text-brand-blue mb-2">Gói Business</h3>
-                <div class="flex items-baseline gap-1 mb-6">
-                    <span class="text-5xl font-bold text-gray-900">39.000.000</span>
-                    <span class="text-gray-500">VNĐ</span>
-                </div>
-                <p class="text-gray-500 text-sm mb-8 border-b border-gray-200 pb-8">Giải pháp toàn diện cho doanh
-                    nghiệp muốn thống lĩnh thị trường.</p>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i>
-                        <strong>200.000 Data Boss</strong> (Full info)
-                    </li>
-                    <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> Tặng
-                        5.000 ZNS + Brandname</li>
-                    <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> Tích hợp
-                        Auto-Call System</li>
-                    <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> Support
-                        1:1 Ưu tiên</li>
-                </ul>
-                <a href="#dang-ky"
-                    class="block w-full py-4 px-4 bg-hero-gradient text-white text-center font-bold rounded-lg hover:shadow-lg hover:opacity-95 transition">
-                    Đăng ký Gói Business ngay
-                </a>
-            </div>
+      <!-- Gói Pro -->
+      <div class="w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:border-gray-500 transition">
+        <h3 class="text-xl font-semibold text-gray-300 mb-2">Gói Pro</h3>
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class="text-4xl font-bold text-white">15.000.000</span>
+          <span class="text-gray-400">VNĐ</span>
         </div>
+        <p class="text-gray-400 text-sm mb-8 border-b border-gray-700 pb-8">Dành cho cá nhân hoặc team sales
+          nhỏ muốn tiếp cận khách hàng tiềm năng.</p>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
+            50.000 Data Boss chất lượng</li>
+          <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
+            Tặng 1.000 ZNS miễn phí</li>
+          <li class="flex items-center text-gray-300"><i class="fas fa-check text-brand-blue mr-3"></i>
+            Support qua Zalo</li>
+        </ul>
+        <a href="#dang-ky" class="block w-full py-3 px-4 bg-gray-700 text-white text-center font-semibold rounded-lg hover:bg-gray-600 transition">
+          Đăng ký Gói Pro
+        </a>
+      </div>
+
+      <!-- Gói Business (giữ nổi bật) -->
+      <div class="w-full max-w-md bg-white text-gray-900 rounded-2xl p-8 border-4 border-brand-blue relative transform md:-translate-y-4 shadow-2xl shadow-blue-900/50">
+        <div class="absolute top-0 right-0 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+          PHỔ BIẾN NHẤT
+        </div>
+        <h3 class="text-xl font-semibold text-brand-blue mb-2">Gói Business</h3>
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class="text-5xl font-bold text-gray-900">39.000.000</span>
+          <span class="text-gray-500">VNĐ</span>
+        </div>
+        <p class="text-gray-500 text-sm mb-8 border-b border-gray-200 pb-8">Giải pháp toàn diện cho doanh
+          nghiệp muốn thống lĩnh thị trường.</p>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i>
+            <strong>200.000 Data Boss</strong> (Full info)
+          </li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> Tặng
+            5.000 ZNS + Brandname</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> Tích hợp
+            Auto-Call System</li>
+          <li class="flex items-center"><i class="fas fa-check-circle text-brand-blue mr-3"></i> Support
+            1:1 Ưu tiên</li>
+        </ul>
+        <a href="#dang-ky" class="block w-full py-4 px-4 bg-hero-gradient text-white text-center font-bold rounded-lg hover:shadow-lg hover:opacity-95 transition">
+          Đăng ký Gói Business ngay
+        </a>
+      </div>
     </div>
+  </div>
 </section>
 
 <section id="dang-ky" class="py-24 bg-gray-50">
