@@ -11,6 +11,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\ConsultationRequest;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -69,13 +70,23 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays homepage.
-     *
-     * @return mixed
+     * Displays homepage + xử lý form đăng ký tư vấn
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new ConsultationRequest(['source' => 'website']);
+
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                Yii::$app->session->setFlash('success', 'Đăng ký thành công! Chuyên viên Chào Sếp sẽ liên hệ Sếp trong vòng 30 phút tới. 🙌');
+                return $this->refresh(); // Refresh trang để thấy flash message + form sạch
+            } else {
+                // Có lỗi validation → flash lỗi (tùy chọn)
+                Yii::$app->session->setFlash('error', 'Vui lòng kiểm tra lại thông tin đăng ký.');
+            }
+        }
+
+        return $this->render('index', ['model' => $model]);
     }
 
     /**
@@ -163,6 +174,8 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+
 
     /**
      * Requests password reset.

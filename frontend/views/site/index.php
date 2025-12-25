@@ -1,5 +1,6 @@
 <?php
-
+use yii\helpers\Html;
+use yii\bootstrap5\ActiveForm;
 /** @var yii\web\View $this */
 
 $this->title = 'Chào Sếp - Phần mềm CRM Quản lý Lead, Pipeline Sales & Marketing Automation Việt Nam';
@@ -452,32 +453,42 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
             </div>
 
             <div class="md:w-7/12 p-10">
-                <form class="space-y-6">
-                    <div>
-                        <label for="Email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="text" id="email"
-                            class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition"
-                            placeholder="VD: vi-du@congty.com">
+                <?php $form = ActiveForm::begin([
+                    'id' => 'consultation-form',
+                    'options' => ['class' => 'space-y-6'],
+                    'fieldConfig' => [
+                        'template' => "{label}\n{input}\n{error}",
+                        'errorOptions' => ['class' => 'text-red-600 text-sm mt-1'],
+                    ],
+                ]); ?>
+
+                    <?= $form->field($model, 'email')->textInput([
+                        'placeholder' => 'vi-du@congty.com',
+                        'class' => 'mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition'
+                    ])->label('Email công ty <span class="text-red-500">*</span>', ['class' => 'block text-sm font-medium text-gray-700']) ?>
+
+                    <?= $form->field($model, 'phone')->textInput([
+                        'placeholder' => '0912 xxx xxx',
+                        'class' => 'mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition'
+                    ])->label('Số điện thoại (Zalo) <span class="text-red-500">*</span>', ['class' => 'block text-sm font-medium text-gray-700']) ?>
+
+                    <?= $form->field($model, 'company')->textInput([
+                        'placeholder' => 'Bất động sản, Bảo hiểm, Giáo dục...',
+                        'class' => 'mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition'
+                    ])->label('Tên công ty / Lĩnh vực kinh doanh', ['class' => 'block text-sm font-medium text-gray-700']) ?>
+
+                    <?= $form->field($model, 'industry')->textInput([
+                        'placeholder' => 'Ví dụ: Bất động sản, Bảo hiểm, F&B... (tùy chọn)',
+                        'class' => 'mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition'
+                    ])->label('Lĩnh vực chi tiết (tùy chọn)', ['class' => 'block text-sm font-medium text-gray-700']) ?>
+
+                    <div class="form-group">
+                        <?= Html::submitButton('Nhận tư vấn & Demo miễn phí ngay', [
+                            'class' => 'w-full py-4 px-6 bg-blue-900 text-white font-bold text-lg rounded-lg hover:bg-blue-800 transition transform hover:-translate-y-1 shadow-lg'
+                        ]) ?>
                     </div>
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700">Số điện thoại
-                            (Zalo)</label>
-                        <input type="tel" id="phone"
-                            class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition"
-                            placeholder="0912 xxx xxx">
-                    </div>
-                    <div>
-                        <label for="company" class="block text-sm font-medium text-gray-700">Tên công ty / Lĩnh
-                            vực</label>
-                        <input type="text" id="company"
-                            class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition"
-                            placeholder="Bất động sản / Bảo hiểm...">
-                    </div>
-                    <button type="submit"
-                        class="w-full py-4 px-6 bg-brand-dark text-white font-bold rounded-lg hover:bg-gray-800 transition transform hover:-translate-y-1">
-                        Nhận tư vấn & Demo miễn phí
-                    </button>
-                </form>
+
+                <?php ActiveForm::end(); ?>
             </div>
         </div>
     </div>
