@@ -447,17 +447,17 @@ $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.u
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64"
                             alt="">
                     </div>
-                    <p class="text-sm font-medium text-white">+2000 KH mới tháng này</p>
+                    <p class="text-sm font-medium text-white">+2 Triệu Sếp Việt Nam chỉ từ 150đ</p>
                 </div>
             </div>
 
             <div class="md:w-7/12 p-10">
                 <form class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Họ và tên</label>
-                        <input type="text" id="name"
+                        <label for="Email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="text" id="email"
                             class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition"
-                            placeholder="VD: Nguyễn Văn A">
+                            placeholder="VD: vi-du@congty.com">
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-700">Số điện thoại
