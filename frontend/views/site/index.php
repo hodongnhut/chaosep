@@ -23,6 +23,17 @@ $this->registerMetaTag(['property' => 'og:url', 'content' => Yii::$app->request-
 $this->registerMetaTag(['property' => 'og:image', 'content' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80']); // Thay bằng link ảnh thực
 
 ?>
+
+<?php if (Yii::$app->session->hasFlash('success')): ?>
+    <div class="mb-8 p-6 bg-green-100 border border-green-400 text-green-800 rounded-xl text-center text-lg font-bold shadow-lg">
+        <?= Yii::$app->session->getFlash('success') ?>
+    </div>
+<?php elseif (Yii::$app->session->hasFlash('error')): ?>
+    <div class="mb-8 p-6 bg-red-100 border border-red-400 text-red-700 rounded-xl text-center text-lg font-bold">
+        <?= Yii::$app->session->getFlash('error') ?>
+    </div>
+<?php endif; ?>
+
 <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
     <div class="absolute inset-0 bg-subtle-grid bg-grid-pattern opacity-50 -z-10"></div>
     <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50 to-transparent -z-10"></div>
